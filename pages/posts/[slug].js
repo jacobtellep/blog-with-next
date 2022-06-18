@@ -1,3 +1,5 @@
-function PostDetailPage() {}
+const PostDetailPage = () => {
+  return;
+};
 
-export default PostDetailPage;
+export default PostDetai;
