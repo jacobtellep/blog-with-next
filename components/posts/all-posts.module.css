@@ -1,9 +1,11 @@
 .posts {
+  font-family: 'Sora', sans-serif;
   width: 90%;
   max-width: 60rem;
   margin: var(--size-8) auto;
 }
 .posts h1 {
+  font-family: 'Sora', sans-serif;
   font-size: var(--size-8);
   color: var(--color-grey-800);
   text-align: center;

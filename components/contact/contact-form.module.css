@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100&display=swap');
+
 .contact {
+  font-family: 'Sora', sans-serif;
   margin: var(--size-8) auto;
   border-radius: 6px;
   background-color: var(--color-grey-100);
@@ -9,13 +12,14 @@
   font-size: var(--size-6);
 }
 .contact h1 {
+  font-family: 'Sora', sans-serif;
   font-size: var(--size-8);
   margin: var(--size-4) 0;
   text-align: left;
 }
 .form label {
+  font-family: 'Sora', sans-serif;
   display: block;
-  font-family: 'Oswald', sans-serif;
   font-weight: bold;
   margin: var(--size-2) 0 var(--size-1) 0;
 }
@@ -58,6 +62,7 @@
 }
 @media (min-width: 768px) {
   .contact h1 {
+    font-family: 'Sora', sans-serif;
     font-size: var(--size-16);
     text-align: center;
   }
