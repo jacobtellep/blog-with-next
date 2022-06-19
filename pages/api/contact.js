@@ -34,16 +34,15 @@ const handler = async (req, res) => {
       serverApi: ServerApiVersion.v1,
     });
 
-    try {
-      client.connect((err) => {
-        const collection = client.db().collection('messages');
-        // perform actions on the collection object
-        collection.insertOne(newMessage);
-      });
-    } catch (error) {
-      res.status(500).json({ message: 'could not connect to database' });
-      client.close();
-    }
+    client.connect((err) => {
+      const collection = client
+        .db(process.env.MONGODB_DB)
+        .collection('messages');
+      // perform actions on the collection object
+      collection.insertOne(newMessage);
+    });
+
+    console.log(collection);
 
     client.close();
 
