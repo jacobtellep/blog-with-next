@@ -27,7 +27,7 @@ const handler = async (req, res) => {
       message,
     };
 
-    const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.mrhnl.mongodb.net/?retryWrites=true&w=majority`;
+    const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env.MONGODB_DB}.mrhnl.mongodb.net/?retryWrites=true&w=majority`;
     const client = new MongoClient(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -36,7 +36,9 @@ const handler = async (req, res) => {
 
     try {
       client.connect((err) => {
-        const collection = client.db('cluster0').collection('messages');
+        const collection = client
+          .db('cluster0')
+          .collection(process.env.MONGODB_COLLECTION);
         // perform actions on the collection object
         collection.insertOne(newMessage);
       });
