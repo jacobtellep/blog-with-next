@@ -5,6 +5,7 @@ import Hero from '../components/home-page/hero';
 import { getFeaturedPosts } from '../lib/posts-util';
 
 const HomePage = (props) => {
+  // comment to update main
   return (
     <>
       <Head>
