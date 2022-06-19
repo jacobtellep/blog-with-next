@@ -36,7 +36,7 @@ const handler = async (req, res) => {
 
     try {
       client.connect((err) => {
-        const collection = client.db('cluster0').collection('messages');
+        const collection = client.db().collection('messages');
         // perform actions on the collection object
         collection.insertOne(newMessage);
       });
