@@ -27,15 +27,6 @@ const handler = async (req, res) => {
       message,
     };
 
-    //     const { MongoClient, ServerApiVersion } = require('mongodb');
-    //     const uri = "mongodb+srv://jacobtellep:<password>@cluster0.mrhnl.mongodb.net/?retryWrites=true&w=majority";
-    //     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    //     client.connect(err => {
-    //     const collection = client.db("test").collection("devices");
-    //      // perform actions on the collection object
-    //      client.close();
-    // });
-
     const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.mrhnl.mongodb.net/?retryWrites=true&w=majority`;
     const client = new MongoClient(uri, {
       useNewUrlParser: true,
