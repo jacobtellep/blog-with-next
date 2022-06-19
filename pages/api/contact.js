@@ -28,7 +28,7 @@ const handler = async (req, res) => {
     };
 
     const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env.MONGODB_DB}.mrhnl.mongodb.net/?retryWrites=true&w=majority`;
-    const client = new MongoClient(uri, {
+    const client = await new MongoClient(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       serverApi: ServerApiVersion.v1,
@@ -40,10 +40,12 @@ const handler = async (req, res) => {
           .db(process.env.MONGODB_DB)
           .collection('messages');
         // perform actions on the collection object
-        collection.insertOne(newMessage);
+        collection.insertOne(newMessage).then((req, res) => {
+          console.log(req);
+          console.log(res);
+        });
       });
     } catch (error) {
-      console.log(collection);
       res.status(500).json({ message: 'could not connect to database' });
       client.close();
     }
