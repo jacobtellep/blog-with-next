@@ -36,9 +36,7 @@ const handler = async (req, res) => {
 
     try {
       client.connect((err) => {
-        const collection = client
-          .db('cluster0')
-          .collection(process.env.MONGODB_COLLECTION);
+        const collection = client.db('cluster0').collection('messages');
         // perform actions on the collection object
         collection.insertOne(newMessage);
       });
