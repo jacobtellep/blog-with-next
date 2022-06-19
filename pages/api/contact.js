@@ -29,8 +29,9 @@ const handler = (req, res) => {
 
     console.log(newMessage);
 
-    res.status(201),
-      json({ message: 'Successfully stored message.', message: newMessage });
+    res
+      .status(201)
+      .json({ message: 'Successfully stored message.', message: newMessage });
   }
 };
 
